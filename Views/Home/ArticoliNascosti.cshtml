@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Scarpe.Scarpa>
+
+@{
+    ViewBag.Title = "ArticoliNascosti";
+}
+
+<h2>ArticoliNascosti</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Copertina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dettaglio1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dettaglio2)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezzo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            <img src="~/img/@item.Copertina" style="max-width:100%" />
+        </td>
+        <td>
+            <img src="~/img/@item.Dettaglio1" style="max-width:100%" />
+        </td>
+        <td>
+            <img src="~/img/@item.Dettaglio2" style="max-width:100%" />
+        </td>
+        <td>
+            @Html.ActionLink("Mostra", "Nascondi", new { id = item.Id })
+        </td>
+    </tr>
+}
+
+</table>

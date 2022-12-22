@@ -1,0 +1,65 @@
+﻿@model Scarpe.Scarpa
+
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>Dettaglio Prodotto</h2>
+
+<div>
+    <h4>Scarpa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Copertina)
+        </dt>
+
+        <dd>
+            <img src="~/img/@Model.Copertina" style="max-width:25%" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dettaglio1)
+        </dt>
+
+        <dd>
+            <img src="~/img/@Model.Dettaglio1" style="max-width:25%" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dettaglio2)
+        </dt>
+
+        <dd>
+            <img src="~/img/@Model.Dettaglio2" style="max-width:25%" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Torana alla Vetrina", "Index")
+</p>
